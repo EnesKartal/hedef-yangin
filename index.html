@@ -10,12 +10,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hedef Yangın Söndürme Tüpleri ve Sistemleri">
 <meta property="og:description" content="Atakum / Samsun · Tüp satışı, dolum, periyodik bakım ve sistem kurulumu. 7/24 açık.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1625958936686-a9343dc35b5b?auto=format&fit=crop&w=1200&h=630&q=80">
+<meta property="og:image" content="img/og.jpg">
 <meta property="og:locale" content="tr_TR">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,6 +32,13 @@
 </script>
 <script>document.documentElement.classList.add("js");</script>
 <style>
+  /* Yazı tipleri yerelden sunulur (Google Fonts'a istek gitmez) */
+  @font-face { font-family: "Geist"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/geist-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+  @font-face { font-family: "Geist"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/geist-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/instrument-serif-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+  @font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/instrument-serif-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/instrument-serif-italic-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+  @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/instrument-serif-italic-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
   :root {
     --bg: #F4EFE8;
     --bg-2: #ECE5DB;
@@ -225,6 +229,17 @@
   .info .actions { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
   .contact-map .core { height: 100%; min-height: 460px; }
   .contact-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.35) sepia(.08); }
+  .map-gate { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 32px; text-align: center; background: var(--bg-2); }
+  .map-gate p { max-width: 30em; font-size: 14.5px; color: var(--ink-soft); }
+  .map-gate button { font: 600 15px/1 var(--sans); padding: 14px 22px; border: 0; border-radius: 999px; background: var(--ink); color: #fff; cursor: pointer; }
+  .map-gate button:hover { background: var(--ink-2); }
+
+  .privacy { padding: 0 0 8px; color: var(--ink-soft); font-size: 14.5px; }
+  .privacy details { border-top: 1px solid var(--hair); padding-top: 22px; }
+  .privacy summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+  .privacy h3 { font-size: 16px; letter-spacing: -0.01em; margin: 20px 0 6px; line-height: 1.3; }
+  .privacy p, .privacy li { max-width: 52em; }
+  .privacy ul { padding-left: 20px; margin: 6px 0 0; }
 
   .foot { padding: 40px 0 48px; color: var(--ink-faint); font-size: 14px; }
   .foot .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--hair); padding-top: 28px; }
@@ -335,7 +350,7 @@
 
       <div class="hero-media" data-reveal style="--d:.2s">
         <div class="shell"><div class="core">
-          <img src="https://images.unsplash.com/photo-1712640379137-6d2532f887a7?auto=format&fit=crop&w=1000&q=80" width="1000" height="1325" alt="Beton duvara asılı kırmızı yangın söndürme tüpü ve yangın tüpü işareti" fetchpriority="high">
+          <img src="img/hero.jpg" width="1000" height="1325" alt="Beton duvara asılı kırmızı yangın söndürme tüpü ve yangın tüpü işareti" fetchpriority="high">
         </div></div>
         <div class="chip">
           <span class="tag">Periyodik bakım</span>
@@ -374,7 +389,7 @@
       <div class="bento">
         <article class="shell b-fill" data-reveal>
           <div class="core photo-card">
-            <img src="https://images.unsplash.com/photo-1649836215936-41c76a724233?auto=format&fit=crop&w=1400&q=80" width="1400" height="1100" alt="Yeşil ahşap duvarda yan yana dizili kırmızı yangın söndürme tüpleri" loading="lazy">
+            <img src="img/dolum.jpg" width="1400" height="1100" alt="Yeşil ahşap duvarda yan yana dizili kırmızı yangın söndürme tüpleri" loading="lazy">
             <div class="card-pad">
               <span class="num">01 — DOLUM</span>
               <h3>Tüp dolumu</h3>
@@ -409,7 +424,7 @@
 
         <article class="shell b-sys" data-reveal>
           <div class="core photo-card">
-            <img src="https://images.unsplash.com/photo-1722227089176-a981d2544b5f?auto=format&fit=crop&w=1000&q=80" width="1000" height="1000" alt="Kırmızı yangın dolabı içinde duvara asılı yangın söndürme tüpü" loading="lazy">
+            <img src="img/kurulum.jpg" width="1000" height="1000" alt="Kırmızı yangın dolabı içinde duvara asılı yangın söndürme tüpü" loading="lazy">
             <div class="card-pad">
               <span class="num">03 — KURULUM</span>
               <h3>Söndürme sistemi kurulumu</h3>
@@ -428,7 +443,7 @@
                 <ul class="checks"><li>Ev</li><li>Araç</li><li>Ofis</li><li>Mutfak</li><li>Fabrika</li></ul>
               </div>
               <div class="img">
-                <img src="https://images.unsplash.com/photo-1651054549146-09fb37f4486f?auto=format&fit=crop&w=900&q=80" width="900" height="900" alt="Beyaz duvarda yan yana asılı kuru kimyevi tozlu ve CO₂ yangın söndürme tüpleri" loading="lazy">
+                <img src="img/satis.jpg" width="900" height="900" alt="Beyaz duvarda yan yana asılı kuru kimyevi tozlu ve CO₂ yangın söndürme tüpleri" loading="lazy">
               </div>
             </div>
           </div>
@@ -444,7 +459,7 @@
         <h2 id="guide-title">Hangi tüp <em>nereye?</em></h2>
         <p>Doğru tüp, yangının türüne göre seçilir. Kısa bir rehber:</p>
         <div class="shell"><div class="core">
-          <img src="https://images.unsplash.com/photo-1592838754746-4af9f09f526f?auto=format&fit=crop&w=800&q=80" width="800" height="800" alt="Beyaz duvara monte edilmiş kırmızı yangın söndürme tüpü" loading="lazy">
+          <img src="img/rehber.jpg" width="800" height="800" alt="Beyaz duvara monte edilmiş kırmızı yangın söndürme tüpü" loading="lazy">
         </div></div>
       </div>
       <div class="guide-main">
@@ -527,11 +542,39 @@
         </div>
         <div class="shell contact-map" data-reveal style="--d:.1s">
           <div class="core">
-            <iframe title="Hedef Yangın konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://maps.google.com/maps?q=Esenevler%20Mahallesi%20350.%20Sokak%20No%3A10%20Atakum%20Samsun&z=16&output=embed"></iframe>
+            <div class="map-gate" id="map-gate">
+              <p>Harita Google Maps üzerinden gösterilir. Yüklediğinizde IP adresiniz ve tarayıcı bilginiz Google'a (yurt dışı) iletilir ve Google çerez yazabilir.</p>
+              <button type="button" id="map-load">Haritayı yükle</button>
+              <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Esenevler%20Mahallesi%20350.%20Sokak%20No%3A10%20Atakum%20Samsun" target="_blank" rel="noopener">Google Haritalar'da aç</a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="privacy" aria-labelledby="privacy-title">
+    <div class="wrap">
+      <details id="gizlilik">
+        <summary id="privacy-title">Gizlilik ve kişisel veriler (KVKK aydınlatma notu)</summary>
+
+        <h3>Veri sorumlusu</h3>
+        <p>Hedef Yangın Söndürme Tüpleri ve Sistemleri — Esenevler Mah. 350. Sok. No:10, Nergis Apt. No:14, 55200 Atakum / Samsun · Telefon / WhatsApp: 0553 250 41 05.</p>
+
+        <h3>Bu site neyi toplar?</h3>
+        <p>Bu sitede form, üyelik, analitik ya da reklam aracı yoktur; site kendi çerezini yazmaz. Yazı tipleri ve görseller kendi sunucumuzdan yüklenir. Siteyi barındıran sunucu, her web sitesinde olduğu gibi teknik erişim kayıtları (IP adresi, tarih-saat, istenen sayfa, tarayıcı bilgisi) tutabilir.</p>
+
+        <h3>WhatsApp ile yazdığınızda</h3>
+        <p>WhatsApp düğmeleri, siz tıkladığınızda WhatsApp'ı (Meta) açar. Bize yazdığınız mesajda paylaştığınız bilgiler (adınız, telefon numaranız, mesaj içeriği, gönderdiğiniz fotoğraflar) elektronik ortamda, WhatsApp üzerinden bize ulaşır. Bu bilgileri yalnız talebinizi yanıtlamak, teklif vermek ve istediğiniz hizmeti (satış, dolum, bakım, kurulum) yerine getirmek için kullanırız. Hukuki sebep, bir sözleşmenin kurulması veya ifasıyla doğrudan ilgili olması olmasıdır (KVKK m.5/2-c). Mesajlar WhatsApp'ın (Meta) sunucularından geçer; bu sunucular yurt dışında olabilir ve WhatsApp'ın kendi gizlilik koşulları geçerlidir. WhatsApp kullanmak istemezseniz bizi telefonla arayabilir ya da adresimize gelebilirsiniz.</p>
+        <p>Bilgileriniz, kanunen yetkili kamu kurum ve kuruluşlarının talebi dışında üçüncü kişilerle paylaşılmaz.</p>
+
+        <h3>Harita</h3>
+        <p>İletişim bölümündeki Google Haritası siz "Haritayı yükle" düğmesine basana kadar yüklenmez. Yüklediğinizde IP adresiniz ve tarayıcı bilginiz Google'a (Google LLC, yurt dışı) iletilir ve Google çerez yazabilir.</p>
+
+        <h3>Haklarınız (KVKK m.11)</h3>
+        <p>Kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse bilgi isteme, işleme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme, aktarıldığı üçüncü kişileri bilme, eksik ya da yanlış işlenmişse düzeltilmesini, şartları oluştuğunda silinmesini veya yok edilmesini ve bu işlemlerin aktarılan kişilere bildirilmesini isteme, yalnız otomatik sistemlerle analiz edilmesi sonucu aleyhinize bir sonuç çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğrarsanız zararın giderilmesini isteme haklarınız vardır.</p>
+        <p>Başvurunuzu yukarıdaki adrese yazılı olarak iletebilirsiniz. Başvurunuz en geç 30 gün içinde ücretsiz olarak sonuçlandırılır.</p>
+      </details>
     </div>
   </section>
 </main>
@@ -539,6 +582,7 @@
 <footer class="foot">
   <div class="wrap">
     <a class="brand" href="#" aria-label="Başa dön"><svg aria-hidden="true"><use href="#i-mark"/></svg><b>Hedef Yangın</b></a>
+    <a href="#gizlilik" class="js-privacy">Gizlilik ve KVKK</a>
     <span>© <span id="y">2026</span> Hedef Yangın Söndürme Tüpleri ve Sistemleri · Atakum / Samsun</span>
   </div>
 </footer>
@@ -552,6 +596,22 @@
     var waUrl = "https://wa.me/905532504105?text=" + encodeURIComponent("Merhaba, Hedef Yangın web sitenizden ulaşıyorum. Bilgi almak istiyorum.");
     document.querySelectorAll(".js-wa").forEach(function (a) { a.href = waUrl; });
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Harita yalnız kullanıcı isteyince yüklenir (Google'a onaysız istek gitmez)
+    document.getElementById("map-load").addEventListener("click", function () {
+      var gate = document.getElementById("map-gate");
+      var f = document.createElement("iframe");
+      f.title = "Hedef Yangın konumu";
+      f.referrerPolicy = "no-referrer-when-downgrade";
+      f.src = "https://maps.google.com/maps?q=Esenevler%20Mahallesi%20350.%20Sokak%20No%3A10%20Atakum%20Samsun&z=16&output=embed";
+      gate.replaceWith(f);
+    });
+
+    // Gizlilik bağlantısı notu açar
+    var priv = document.getElementById("gizlilik");
+    function openPriv() { priv.open = true; }
+    if (location.hash === "#gizlilik") openPriv();
+    document.querySelectorAll(".js-privacy").forEach(function (a) { a.addEventListener("click", openPriv); });
 
     var items = document.querySelectorAll("[data-reveal]");
     if (!("IntersectionObserver" in window)) {
